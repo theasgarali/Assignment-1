@@ -2,7 +2,7 @@
 
 // Configuration details can be amended here.
 
-define('BASE_URL', 'http://192.168.64.2/moviesite/');	// URL of the site where web application is going to run.
+define('BASE_URL', 'http://192.168.64.2/moviesite');	// URL of the site where web application is going to run.
 define('DB_HOST', 'localhost');  // Database host Name.
 define('DB_PORT', '3306');  //Port number.
 define('DB_USERNAME', 'root');  // User permission to access the database.
