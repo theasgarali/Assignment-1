@@ -30,7 +30,7 @@ if (Auth::check()) {
         ?>
         <div class="col-sm-3">
         	<!-- Get the unique id of the movie to create a link and land to the movie page when user clicks on it  -->
-            <a class="movie-link" href="<?php echo BASE_URL.'/movie.php?id='.$movie['id']; ?>">
+            <a class="movie-link" href="<?php echo BASE_URL.'/movie_thumb.php?id='.$movie['id']; ?>">
                 <div class="movie-mask">
                     <div class="back-mask"></div>
                 </div>
