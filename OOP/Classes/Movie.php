@@ -19,7 +19,8 @@ class Movie extends DbConnection { // All class that operates with db is suppose
 		self:: RATING_FOUR => 'four stars',
 		self:: RATING_FIVE => 'five stars',
 	];
-
+	
+	//Search function
     public function search($search='', $rating=0) {
 		//base query
 		$sql = "SELECT * FROM movies";
@@ -42,7 +43,7 @@ class Movie extends DbConnection { // All class that operates with db is suppose
 				$params['rating'] = $rating;
         	}
 
-        	//implode conditions
+        	//implode (join array elements with a string) conditions.
         	$sql .= ' WHERE '.implode(' AND ', $conditions);
 		}
 
@@ -98,15 +99,13 @@ class Movie extends DbConnection { // All class that operates with db is suppose
 				['id'=>$id, 'name'=>$name, 'image'=>$image_path, 'description'=>$description, 'rating'=>$rating]
 			);
         }
-    }
-
+	}
+	
+    //delete a movie.
     public function delete($id){
         $old_data = $this->find($id);
         $old_image = $old_data['image'];
-
         Storage::delete($old_image);
-
-        //delete movie
         $this->execute("DELETE FROM movies WHERE id=:id", ['id'=>$id]);
     }
 }
