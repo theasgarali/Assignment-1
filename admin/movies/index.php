@@ -5,9 +5,9 @@
 require_once(__DIR__ . '/../../autoloader.php');
 require_once(__DIR__ . '/../../config.php');
 
-use OOP\Classes\Movie;
+use OOP\Classes\movie;
 
-$movie_data = new Movie;
+$movie_data = new movie;
 $movies = $movie_data->search();
 
 require __DIR__ . '/../../header.php';

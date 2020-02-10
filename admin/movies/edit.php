@@ -4,9 +4,9 @@ require_once(__DIR__ . '/../../autoloader.php');
 require_once(__DIR__ . '/../../config.php');
 
 use OOP\Classes\Auth;
-use OOP\Classes\Movie;
+use OOP\Classes\movie;
 
-$movie_data = new Movie;
+$movie_data = new movie;
 $movie = $movie_data->find($_GET['id']);
 
 //If Login type is not Admin, system will redirect user to the index page.

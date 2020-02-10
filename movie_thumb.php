@@ -8,7 +8,7 @@ require(__DIR__.'/autoloader.php');
 require(__DIR__.'/config.php');
 
 use OOP\Classes\Auth;
-use OOP\Classes\Movie;
+use OOP\Classes\movie;
 
 /*Check for the user session. If the user is not logged in, system will redirect the customer to the index page.
 Auth: means you have to check the Auth.php file and "Check()" is the function name.*/
@@ -20,7 +20,7 @@ if(!Auth::check()){
 /*This code is to get the individual movie information. $_GET['id'] is used to get the movie ID from the URL. 
 So if movie id is passed through the URL, this ID is used to send the code to get the movie details.*/
 
-$movie_data = new Movie;
+$movie_data = new movie;
 $movie = $movie_data->find($_GET['id']);
 
 require __DIR__ . '/header.php';

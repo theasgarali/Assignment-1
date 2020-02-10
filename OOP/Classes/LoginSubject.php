@@ -54,8 +54,8 @@ class LoginSubject implements \SplSubject
 		else {
 			//Here if there is no in database, change user state.
 			$user['fail'] = 1;
-			$user['failemail'] = $email;
-			$user['failpassword'] = $pass;
+			$user['failed email'] = $email;
+			$user['failed password'] = $pass;
 			$this->user = $user;
 
 			//notify state change to observers.

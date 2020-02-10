@@ -10,11 +10,11 @@ require __DIR__ . '/header.php';
 
 //import namespaces
 use OOP\Classes\Auth;
-use OOP\Classes\FailureMail;
+use OOP\Classes\failureMail;
 use OOP\Classes\LoginSubject;
 
 $login = new LoginSubject();
-$login->attach(new FailureMail());
+$login->attach(new failureMail());
 
 $errors = [];
 

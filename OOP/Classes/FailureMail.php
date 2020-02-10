@@ -4,7 +4,7 @@ namespace OOP\Classes;
 
 // Observer pattern - Class implements splObserver. If login fails, send an email to the admin email.
 
-class FailureMail implements \SplObserver{
+class failureMail implements \SplObserver{
 
 	public function  update($observable)
     {

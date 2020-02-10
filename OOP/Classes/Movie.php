@@ -2,7 +2,7 @@
 
 namespace OOP\Classes;
 
-class Movie extends DbConnection { // All class that operates with db is supposed to inherite the DbConnection class.
+class movie extends DbConnection { // All class that operates with db is supposed to inherite the DbConnection class.
 
 	//rating constant variables.
 	const RATING_ONE = 1;

@@ -6,14 +6,14 @@ require(__DIR__.'/config.php');
 
 // You can just get file included by using this 'use' expression.
 use OOP\Classes\Auth;
-use OOP\Classes\Movie;
+use OOP\Classes\movie;
 
 // header.php file used to add the site links, search bar,etc for the user to navigate the site.
 require __DIR__ . '/header.php'; // header is included
 
 //show movies only for authorised users
 if (Auth::check()) {
-	$movie_data = new Movie();
+	$movie_data = new movie();
 
 	// calls search method of Movie Instance. If URL has the variable 'Search', system will list the movies based on search keywords and options.
 	$movies = $movie_data->search(
