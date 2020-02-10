@@ -54,7 +54,7 @@ if (Auth::check()) {
         <?php
         }
     }else{
-			// If no movies stored in table. It will show custom message as mentioned below.
+			// If no movies stored in table, it will show message.
         ?>
         <div class="no-movie-result">
             Sorry. No result for that keyword.
