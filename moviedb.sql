@@ -72,3 +72,12 @@ CREATE TABLE `auth_history` (
   `status` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `search_history` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `query` varchar(255) NOT NULL,
+    `time` int(11) NOT NULL,
+    `rating` tinyint(4) NOT NULL,
+    `count` int(11) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
