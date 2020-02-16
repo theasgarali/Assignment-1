@@ -2,9 +2,9 @@
 
 namespace OOP\Classes;
 
-// Observer pattern - Class implements splObserver. If login fails, send an email to the admin email.
+// Observer pattern - splObserver. If login fails, send an email to the admin email.
 
-class failureMail implements \SplObserver{
+class FailureMail implements \SplObserver{
 
 	public function  update($observable)
     {
@@ -13,11 +13,10 @@ class failureMail implements \SplObserver{
         $auth = new Auth();
 
         if(isset($user['fail'])){
-
-			//write fail auth log.
+			//write fail auth log
 			$auth->write_login($user['failure email'], Auth:: STATUS_FAIL);
 
-			//send an email.
+			//send email
 			$to_email = 'moviesite@outlook.com';
             $subject = 'Checking user log ins';
             $message = 'Log in has failed';

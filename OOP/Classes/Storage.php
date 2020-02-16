@@ -1,6 +1,6 @@
 <?php
 
-//This file is called from add.php to STORE the movie images.
+//This file is called from add.php to STORE the Movie images.
 
 namespace OOP\Classes;
 
@@ -19,21 +19,16 @@ class Storage{
             $index = rand(0, strlen($characters) - 1); 
             $randomString .= $characters[$index]; 
         }
-
+        $errors = [];
         $currentDir = getcwd();
         $uploadDirectory = "/../../".STORAGE_PATH."/".$subPath;
-    
-        $errors = [];
-    
         $fileName = $file['name'];
         $fileSize = $file['size'];
         $fileTmpName  = $file['tmp_name'];
         $fileType = $file['type'];
         $name_exploded = explode(".", $fileName);
         $fileExtension = end($name_exploded);
-
         $save_fileName = $randomString . '.' .$fileExtension;
-    
         $uploadPath = $currentDir . $uploadDirectory . '/' . $save_fileName;
         $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 

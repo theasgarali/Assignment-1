@@ -2,13 +2,13 @@
 
 namespace OOP\Classes;
 
-// All class that operates with db is supposed to inherite this DbConnection class.
+// Authorisation (Auth) of users of the site. All classes that operates with db inherite DbConnection BASE class.
 class Auth extends DbConnection
 {
 	const STATUS_SUCCESS = 1;
 	const STATUS_FAIL = 2;
 
-	//status descriptions
+	//status description
 	public static $statuses = [
 		self:: STATUS_SUCCESS => 'success',
 		self:: STATUS_FAIL => 'fail',
@@ -18,10 +18,10 @@ class Auth extends DbConnection
     public static function check(){
         if (isset($_SESSION['user'])) {
             return true;
-        }
-            
+        }    
         return false;
-    }
+	}
+	
     // This function checks the User Type if User type is Admin, it returns true else return false.
     public static function isAdmin(){
         if (isset($_SESSION['user']) && $_SESSION['type'] == 'admin') {
@@ -31,7 +31,7 @@ class Auth extends DbConnection
         return false;
     }
 
-	//This function check the login details of the user with the database data. If system found user data in database, it returns true else return false.
+	//This function checks the login details of the user with the database data. If system found user data in database, it returns true else return false.
     public function check_login($email, $password) {
 
     	//get row
@@ -50,13 +50,13 @@ class Auth extends DbConnection
         }
     }
 
-	// This functionn is used to clear user seession while do Log out.
+	// This function is used to clear user session while logging out.
     public static function logout() {  
         $_SESSION['user'] = false;
         session_destroy();
     }
  
-	// This function is used to Insert new user data to database. This function is called when new user registers with the site to save data.
+	// This function is used to insert new user data to database. This function is called when new user registers with the site to save data.
 	public function signup($name, $email, $password){
 
     	//inset user data
@@ -66,7 +66,7 @@ class Auth extends DbConnection
 		);
 	}
 
-	// Check the email within database. If provided email is already in database, it return true, else return false.
+	// Check the email within database. If provided email is already in database, it returns true, else returns false.
     public function is_email($email){
 
     	//return user data, if it exists
