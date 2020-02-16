@@ -10,7 +10,7 @@ require(__DIR__.'/config.php');
 
 require __DIR__ . '/header.php';
 
-//create auth object
+//create an authorisation object.
 $auth = new Auth();
 
 //check authorisation, redirect to index if guest
@@ -22,6 +22,7 @@ $attempts = $auth->read_logins();
 ?>
 <div class="movie-container row pt-4">
 	<table class="table">
+	<h1>List of user log-ins</h1>
 		<tr>
 			<th>Time</th>
 			<th>Email</th>
