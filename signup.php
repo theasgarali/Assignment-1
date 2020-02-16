@@ -1,6 +1,6 @@
 <?php
 
-/*This file is used to SIGNUP. If user is already logged-in and visits this page, system will redirect him to the index page.*/
+/*SIGNUP FILE. If user is already logged-in and visits this page, system will redirect him to the index page.*/
 
 
 //autoloader & config require
@@ -55,7 +55,7 @@ elseif(Auth::check()){
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Movie Site/signup</title>
+<title>Movies</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
