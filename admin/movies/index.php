@@ -5,9 +5,9 @@
 require_once(__DIR__ . '/../../autoloader.php');
 require_once(__DIR__ . '/../../config.php');
 
-use OOP\Classes\movie;
+use OOP\Classes\Movie;
 
-$movie_data = new movie;
+$movie_data = new Movie;
 $movies = $movie_data->search();
 
 require __DIR__ . '/../../header.php';
@@ -24,7 +24,7 @@ require __DIR__ . '/../../header.php';
             <tr>
                 <th style="width: 140px;">Title</th>
                 <th>Pic</th>
-                <th>Description</th>
+                <th>Review</th>
                 <th style="width: 100px;">Rating</th>
                 <th style="width: 140px;">Action</th>
             </tr>
@@ -35,7 +35,7 @@ require __DIR__ . '/../../header.php';
             ?>
                 <tr>
                     <td><?php echo $movie['name'];?></td>
-                    <td><img class="movie-thumb-small" src="<?php echo BASE_URL.'/assets/'.$movie['image'];?>"></td>
+                    <td><img class="movie-thumb-small" src="<?php echo BASE_URL.'assets/'.$movie['image'];?>"></td>
                     <td class="movie-table-description">
                         <div>
                             <?php echo $movie['description'];?>

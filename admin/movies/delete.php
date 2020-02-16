@@ -1,13 +1,15 @@
 <?php
 
+//DELETE MOVIE FILE
+
 require_once(__DIR__ . '/../../autoloader.php');
 require_once(__DIR__ . '/../../config.php');
 
 
 use OOP\Classes\Auth;
-use OOP\Classes\movie;
+use OOP\Classes\Movie;
 
-$movie = new movie;
+$movie = new Movie;
 
 //If Login type is not Admin, system will redirect user to the index page.
 

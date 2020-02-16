@@ -1,12 +1,14 @@
 <?php
 
+//EDIT MOVIE FILE
+
 require_once(__DIR__ . '/../../autoloader.php');
 require_once(__DIR__ . '/../../config.php');
 
 use OOP\Classes\Auth;
-use OOP\Classes\movie;
+use OOP\Classes\Movie;
 
-$movie_data = new movie;
+$movie_data = new Movie;
 $movie = $movie_data->find($_GET['id']);
 
 //If Login type is not Admin, system will redirect user to the index page.
