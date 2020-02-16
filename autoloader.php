@@ -2,7 +2,7 @@
 
 session_start();
 
-/* Autoloading all classes from \Classes.
+/* AUTOLOADING all classes from \Classes.
 “PHP: Autoloading Classes - Manual.” 
 [Online]. Available: https://www.php.net/manual/en/language.oop5.autoload.php. 
 [Accessed: 08-Jan-2020].
