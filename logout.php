@@ -1,4 +1,7 @@
+
 <?php
+
+//LOGOUT FILE
 
 //autoloader & config require
 require(__DIR__.'/autoloader.php');
