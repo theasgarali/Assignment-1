@@ -1,6 +1,8 @@
 <?php
 
-/* User needs to login to view the movies. If user is already logged, code will check the staus and send to the index.php file 
+/* LOGIN FILE. 
+
+If user is already logged, code will check the staus and send to the index.php file 
 else run the rest of the code of this page which contains the login form to be fill up by the user for authenticate and check the movies list.*/
 
 //autoloader & config require
@@ -10,13 +12,13 @@ require __DIR__ . '/header.php';
 
 //import namespaces
 use OOP\Classes\Auth;
-use OOP\Classes\failureMail;
+use OOP\Classes\FailureMail;
 use OOP\Classes\LoginSubject;
 
-$login = new LoginSubject();
-$login->attach(new failureMail());
+$login = new LoginSubject(); //$login object created from LoginSubject (SplSubject) Class.
+$login->attach(new FailureMail()); //Attach an SplObserver (FailureMail Class) to $login object.
 
-$errors = [];
+$errors = []; //array
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
 	// if the request to call this file is post, you can find the method of the form in below HTML code 'form method="post"'.
@@ -38,7 +40,7 @@ elseif(Auth::check()) { // if user has already logged in, redirect to index page
 <head>
 <!-- head.php file contains the CSS, JS, third party code, etc for the site which are common for all pages. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Movie Site/login</title>
+<title>Movies</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
