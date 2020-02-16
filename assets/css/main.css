@@ -62,12 +62,6 @@ a{
     align-items: center;
 }
 
-.auth-form-container{
-    min-width: 600px;
-    background-color: #fff;
-    color: #000;
-    padding: 36px;
-}
 
 .invalid-feedback{
     color: #f00;
@@ -138,27 +132,6 @@ a{
     opacity: 1;
 }
 
-.star-rating{
-    padding: 6px 0;
-}
-
-.fa-star {
-    color: rgba(56, 56, 56);
-}
-
-.fa-star.checked {
-    color: orange;
-}
-
-.no-movie-result{
-    padding: 30px;
-    color: #fff;
-    font-size: 16px;
-}
-
-.star-rating-large span{
-    font-size: 26px;
-}
 
 .movie-detail-description{
     line-height: 30px;
@@ -188,4 +161,38 @@ table .movie-table-description > div{
 
 .form-container{
     margin-top: 20px;
+}
+
+/*---------------------------------------------------Star ratings-------------------------------------------------*/
+
+.star-rating{
+    padding: 6px 0;
+}
+
+.fa-star {
+    color: rgba(56, 56, 56);
+}
+
+.fa-star.checked {
+    color: orange;
+}
+
+.no-movie-result{
+    padding: 30px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.star-rating-large span{
+    font-size: 26px;
+}
+
+/*---------------------------------------------------form-------------------------------------------------*/
+
+
+.auth-form-container{
+    min-width: 600px;
+    background-color: #fff;
+    color: #000;
+    padding: 36px;
 }
