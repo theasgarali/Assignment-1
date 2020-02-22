@@ -6,9 +6,6 @@ namespace OOP\Classes;
 
 class SearchObserver implements \SplObserver{
 
-	/**
-	 * @param SearchSubject $observable
-	 */
 	public function update($observable)
     {
 		//create Movie object

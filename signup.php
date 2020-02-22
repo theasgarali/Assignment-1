@@ -1,6 +1,6 @@
 <?php
 
-/*SIGNUP FILE. If user is already logged-in and visits this page, system will redirect him to the index page.*/
+/*This file is used to SIGNUP. If user is already logged-in and visits this page, system will redirect him to the index page.*/
 
 
 //autoloader & config require
@@ -10,6 +10,8 @@ require __DIR__ . '/header.php';
 
 
 use OOP\Classes\Auth;
+use OOP\Classes\FailureMail;
+use OOP\Classes\LoginSubject;
 
 $errors = [];
 
@@ -36,18 +38,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //register new user if no errors
     if (0==count($errors)) {
 
-		$user = new Auth;
+		$login = new LoginSubject(); //$login object created from LoginSubject (SplSubject) Class.
+		$login->attach(new FailureMail()); //Attach an SplObserver (FailureMail Class) to $login object.
 
+		$user = new Auth;
 		$user->signup($name, $email, $password);
-		if (!$user->check_login($email, $password)) {
-			$errors['invalid_credentials'] = 'Invalid email or password';
-			header('location:login.php');
+
+		if ($login->createUser($email, $password)) {
+			header('location:index.php');
+			exit;
 		}
+
+		$errors['invalid_credentials'] = 'Invalid email or password';
 	}
 }
 //If user is already logged-in, system will redirect him to the site main page.
 elseif(Auth::check()){
 	header('location:index.php');
+	exit;
 }
 ?>
 

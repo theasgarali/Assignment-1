@@ -9,10 +9,10 @@ namespace OOP\Classes;
 
 class LoginSubject implements \SplSubject
 {
-    // this is variable to save observers 
+    // variable to save observers 
     private $observers = array();
 
-    //a varible to save user state
+    //a variable to save user state
     public $_user;
 
     //if user state is changed, It notify to observers and let them update. 
@@ -26,7 +26,7 @@ class LoginSubject implements \SplSubject
     //detach a observer from subject.
     public function detach( $observer )
     {
-        $this->observers []= $observer;
+        $this->observers []= $observer; // an an observer to the observer subject.
     }
 
     //attach a observer from subject.
@@ -35,7 +35,7 @@ class LoginSubject implements \SplSubject
         $this->observers []= $observer;
     }
 
-    //this is important part. Here we change user state ie login event. subject notify to observer. 
+    //This is the IMPORTANT part where we change user state ie login event. subject notify to observer. 
     public function createUser($email, $pass)
     {
         // create auth instance

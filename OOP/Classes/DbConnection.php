@@ -53,13 +53,6 @@ class DbConnection{ // Database connection class that will be used as base class
 
     	//prepare the statement
 		$sth = $this->getConnection()->prepare($sql);
-		
-		//echo "Sql: ".$sql;
-		//echo "<pre>";
-		//print_r($params);
-		//exit;
-
-		//execute statement
 		$sth->execute($params);
 	}
 }
